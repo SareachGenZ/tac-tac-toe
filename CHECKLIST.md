@@ -1,0 +1,38 @@
+# Tic-Tac-Toe Pro — Project Task Checklist
+
+- [x] **Phase 1: Planning and project setup**
+  - [x] Architecture & module contract planning
+  - [x] Vite + React + Tailwind CSS + PostCSS configuration
+  - [x] Folder structure (`src/assets`, `src/components`, `src/hooks`, `src/utils`, `src/pages`, `src/styles`, `tests`)
+  - [x] Dark & Light mode CSS design tokens & base typography
+  - [x] Phase 1 verification tests
+- [x] **Phase 2: UI/UX design and application layout**
+  - [x] Reusable `Button`, `Modal`, and `ConfirmDialog` components
+  - [x] Responsive `Header` with Home, Statistics, Settings, Theme toggle, Sound toggle
+  - [x] `Home` welcome screen with X/O visual showcase, Play Game, How to Play, View Statistics
+  - [x] `GameModeSelector` (PvP + player names, PvC) & `DifficultySelector` (Easy/Medium/Hard)
+  - [x] `HowToPlayModal`, `SettingsPanel`, `Game`, `Statistics`, `useTheme`, `storage.js`
+- [x] **Phase 3: Basic Tic-Tac-Toe gameplay**
+  - [x] Pure `gameLogic.js` engine (board state, 8 winning lines, draw detection, move validation)
+  - [x] `useGame.js` hook (turn alternation, session scores, restart/reset)
+  - [x] `GameBoard.jsx`, `GameCell.jsx`, `Game.jsx`, `GameResultModal.jsx`
+- [x] **Phase 4: Player vs Computer AI**
+  - [x] `minimax.js` (Easy random, Medium tactical win/block, Hard optimal Minimax with alpha-beta pruning)
+  - [x] `useAI.js` hook with AI thinking indicator & turn locking
+- [x] **Phase 5: Scoreboard and statistics**
+  - [x] `statistics.js`, `useLocalStorage.js`
+  - [x] `ScoreBoard.jsx`, `StatisticsPanel.jsx`, `Statistics.jsx`, reset confirmation dialog
+- [x] **Phase 6: Game history and settings**
+  - [x] `HistoryPanel.jsx` (auto-save, empty state, clear history confirmation)
+  - [x] Full `SettingsPanel.jsx` integration (theme, sound, animations, default difficulty, reset stats, reset preferences)
+- [x] **Phase 7: Animations and sound effects**
+  - [x] `useSound.js` (Web Audio API synthesized sounds: click, X, O, win, draw)
+  - [x] Framer Motion cell/symbol/winning-line/modal/score/button animations & reduced-motion support
+- [x] **Phase 8: Responsive design and accessibility**
+  - [x] Mobile/tablet/desktop layout, arrow-key board navigation, `aria-live` announcements, native `<dialog>` modals, `:focus-visible` outlines
+- [x] **Phase 9: Testing and bug fixing**
+  - [x] Node unit, exhaustive Minimax AI, storage, and accessibility verification tests
+  - [x] Vitest + React Testing Library UI integration test suite
+- [x] **Phase 10: Documentation and deployment**
+  - [x] Comprehensive `README.md` (overview, installation, GitHub setup, testing, deployment)
+  - [x] Final verification pass

@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme Tokens */
+  --color-bg: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #E2E8F0;
+  --color-border: #CBD5E1;
+  --color-primary: #7C3AED;
+  --color-primary-hover: #6D28D9;
+  --color-secondary: #0891B2;
+  --color-secondary-hover: #0E7490;
+  --color-player-x: #0284C7;
+  --color-player-o: #9333EA;
+  --color-success: #16A34A;
+  --color-danger: #DC2626;
+  --color-warning: #D97706;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+}
+
+.dark {
+  /* Dark Theme Tokens (Default) */
+  --color-bg: #0B1020;
+  --color-surface: #151D32;
+  --color-surface-secondary: #1E293B;
+  --color-border: #2D3B55;
+  --color-primary: #8B5CF6;
+  --color-primary-hover: #7C3AED;
+  --color-secondary: #06B6D4;
+  --color-secondary-hover: #0891B2;
+  --color-player-x: #38BDF8;
+  --color-player-o: #C084FC;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+}
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-block-size: 100dvh;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  :where(a:any-link, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Native <dialog> modal scroll containment & backdrop styling */
+dialog:modal {
+  overscroll-behavior: contain;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  max-inline-size: min(92vw, 36rem);
+  inline-size: 100%;
+  max-block-size: 90dvh;
+  overflow-y: auto;
+}
+
+dialog::backdrop {
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
